@@ -1,5 +1,4 @@
 # disaster_response
-# udacity_data_eng
 Data Scientist Nanodegree
 
 # Disaster Response Pipeline Project
