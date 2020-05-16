@@ -91,6 +91,6 @@ dakcicek$ python run.py
 Go : http://localhost:3001/
 
 
-![Image description]https://github.com/dakcicek/disaster_response/blob/master/app/screen-1.png
-![Image description]https://github.com/dakcicek/disaster_response/blob/master/app/screen-2.png
-![Image description]https://github.com/dakcicek/disaster_response/blob/master/app/screen-3.png
+![home page](https://github.com/dakcicek/disaster_response/blob/master/app/screen-1.png)
+![query text](https://github.com/dakcicek/disaster_response/blob/master/app/screen-2.png)
+![visualizations](https://github.com/dakcicek/disaster_response/blob/master/app/screen-3.png)
