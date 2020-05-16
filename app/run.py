@@ -7,11 +7,12 @@ from nltk.tokenize import word_tokenize
 
 from flask import Flask
 from flask import render_template, request, jsonify
-from plotly.graph_objs import Bar
 from sklearn.externals import joblib
 from sqlalchemy import create_engine
+from plotly.graph_objs import Bar, Layout, Figure, Table, Heatmap
 
 
+ 
 app = Flask(__name__)
 
 def tokenize(text):
@@ -39,33 +40,65 @@ model = joblib.load("../models/classifier.pkl")
 def index():
     
     # extract data needed for visuals
-    # TODO: Below is an example - modify to extract data for your own visuals
     genre_counts = df.groupby('genre').count()['message']
     genre_names = list(genre_counts.index)
-    
-    # create visuals
-    # TODO: Below is an example - modify to create your own visuals
-    graphs = [
-        {
-            'data': [
-                Bar(
-                    x=genre_names,
-                    y=genre_counts
-                )
-            ],
 
-            'layout': {
-                'title': 'Distribution of Message Genres',
-                'yaxis': {
-                    'title': "Count"
-                },
-                'xaxis': {
-                    'title': "Genre"
-                }
-            }
-        }
-    ]
-    
+    # Top 20 categories count
+    top_category_count = df.iloc[:,4:].sum().sort_values(ascending=False)[1:21]
+    top_category_names = list(top_category_count.index)
+
+     # target map
+    target_distribution = df.drop(['id','message','original','genre'], axis=1).mean()
+    target_names = list(target_distribution.index)
+
+    y = df.drop(['id', 'message', 'original', 'genre'], axis=1).astype(float)
+    cat_names = y.columns.values
+    cat_counts = [sum(y[x]) for x in cat_names]
+    corr = y.corr()
+    labels = y.columns.values
+  
+    graphs = []
+    graph_1 = {
+                    'data': [Bar( x=genre_names, y=genre_counts)],
+                    'layout': { 'title': 'Message Genres Distribution',
+                                'yaxis': { 'title': "Count"},
+                                'xaxis': {'title': "Genre"}
+                               }
+               }
+    graph_2 = {
+                    'data': [Bar( x=top_category_names, y=top_category_count)],
+                    'layout': { 'title': 'Top 20 Categories',
+                                'yaxis': { 'title': "Count", 
+                                            'titlefont': {'color': 'black', 'size': 12}, 
+                                            'tickangle':45,
+                                            'automargin': True
+                                         },
+                                'xaxis': {'title': "Categories",  'titlefont': {'color': 'black', 'size': 12}}
+                               }
+               }
+    graph_3 = {
+                    'data': [Bar( x=target_names, y=target_distribution)],
+                    'layout': { 'title': 'Target Counts',
+                                'yaxis': { 'title': "Count", 
+                                            'titlefont': {'color': 'black', 'size': 12}, 
+                                            'tickangle':45,
+                                            'automargin': True
+                                         },
+                                'xaxis': {'title': "Categories",  'titlefont': {'color': 'black', 'size': 12}}
+                               }
+               }
+
+    graph_4 = { 'data': [Heatmap( x=labels,y=labels,z=corr.values)],
+                'layout': { 'title': 'Categories Correlation','height': 1000}
+               }
+
+    graphs.append(graph_1)
+    graphs.append(graph_2)
+    graphs.append(graph_3)
+    graphs.append(graph_4)
+
+    # create visuals
+
     # encode plotly graphs in JSON
     ids = ["graph-{}".format(i) for i, _ in enumerate(graphs)]
     graphJSON = json.dumps(graphs, cls=plotly.utils.PlotlyJSONEncoder)
