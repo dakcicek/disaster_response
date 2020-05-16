@@ -71,10 +71,10 @@ Result:
     `python run.py`
     
 `root@2788f07862a9:/home/workspace/app# python run.py`
-`- Running on http://localhost:3001/ (Press CTRL+C to quit)`
-`- Restarting with stat`
-`- Debugger is active!`
-`- Debugger PIN: 291-862-946
+`* Running on http://localhost:3001/ (Press CTRL+C to quit)`
+`* Restarting with stat`
+`* Debugger is active!`
+`* Debugger PIN: 291-862-946
  `
 
 
