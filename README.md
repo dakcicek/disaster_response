@@ -3,6 +3,9 @@ Data Scientist Nanodegree
 
 # Disaster Response Pipeline Project
 
+Before the start, please use following command to clone repo  :
+
+`git clone https://github.com/matteobonanomi/disaster-response.git`
 
 1. There are two csv data file and following program will load, clean, transform and merge dataframes. After that result data frame will be written to database. You can use following command to trigger proces.
 
@@ -67,23 +70,22 @@ Result:
 2. Run the following command in the app's directory to run your web app.
     `python run.py`
     
-dakcicek$ python run.py
+`dakcicek$ python run.py
 /Users/dakcicek/opt/anaconda3/lib/python3.7/site-packages/sklearn/externals/joblib/__init__.py:15: FutureWarning: sklearn.externals.joblib is deprecated in 0.21 and will be removed in 0.23. Please import this functionality directly from joblib, which can be installed with: pip install joblib. If this warning is raised when loading pickled models, you may need to re-serialize those models with scikit-learn 0.21+.
   warnings.warn(msg, category=FutureWarning)
  * Serving Flask app "run" (lazy loading)
- * Environment: production
+ `* Environment: production
    WARNING: This is a development server. Do not use it in a production deployment.
    Use a production WSGI server instead.
  * Debug mode: on
- * Running on http://localhost:3001/ (Press CTRL+C to quit)
+ `* Running on http://localhost:3001/ (Press CTRL+C to quit)
  * Restarting with fsevents reloader
-/Users/dakcicek/opt/anaconda3/lib/python3.7/site-packages/sklearn/externals/joblib/__init__.py:15: FutureWarning: sklearn.externals.joblib is deprecated in 0.21 and will be removed in 0.23. Please import this functionality directly from joblib, which can be installed with: pip install joblib. If this warning is raised when loading pickled models, you may need to re-serialize those models with scikit-learn 0.21+.
+`/Users/dakcicek/opt/anaconda3/lib/python3.7/site-packages/sklearn/externals/joblib/__init__.py:15: FutureWarning: sklearn.externals.joblib is deprecated in 0.21 and will be removed in 0.23. Please import this functionality directly from joblib, which can be installed with: pip install joblib. If this warning is raised when loading pickled models, you may need to re-serialize those models with scikit-learn 0.21+.
   warnings.warn(msg, category=FutureWarning)
  * Debugger is active!
- * Debugger PIN: 308-548-945
+` * Debugger PIN: 308-548-945
 127.0.0.1 - - [16/May/2020 04:16:41] "GET / HTTP/1.1" 200 -
-127.0.0.1 - - [16/May/2020 04:16:43] "GET /favicon.ico HTTP/1.1" 404 -
-
+127.0.0.1 - - [16/May/2020 04:16:43] "GET /favicon.ico HTTP/1.1" 404 `
 
 
 ### Web App :
