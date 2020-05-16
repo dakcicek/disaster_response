@@ -91,8 +91,6 @@ dakcicek$ python run.py
 Go : http://localhost:3001/
 
 
-
-127.0.0.1 - - [16/May/2020 04:16:41] "GET / HTTP/1.1" 200 -
-
-
-
+![Image description]https://github.com/dakcicek/disaster_response/blob/master/app/screen-1.png
+![Image description]https://github.com/dakcicek/disaster_response/blob/master/app/screen-2.png
+![Image description]https://github.com/dakcicek/disaster_response/blob/master/app/screen-3.png
