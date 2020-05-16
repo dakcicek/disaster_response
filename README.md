@@ -90,7 +90,7 @@ Result:
 
 ### Web App :
 
-Go : http://localhost:3001/
+Go : http://0.0.0.0:3001/
 
 
 ![home page](https://github.com/dakcicek/disaster_response/blob/master/app/screen-1.png)
