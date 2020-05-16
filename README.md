@@ -96,3 +96,6 @@ Go : http://localhost:3001/
 ![home page](https://github.com/dakcicek/disaster_response/blob/master/app/screen-1.png)
 ![query text](https://github.com/dakcicek/disaster_response/blob/master/app/screen-2.png)
 ![visualizations](https://github.com/dakcicek/disaster_response/blob/master/app/screen-3.png)
+![visualization-1](https://github.com/dakcicek/disaster_response/blob/master/app/screen-4.png)
+![visualization-2](https://github.com/dakcicek/disaster_response/blob/master/app/screen-5.png)
+![visualization-3](https://github.com/dakcicek/disaster_response/blob/master/app/screen-6.png)
