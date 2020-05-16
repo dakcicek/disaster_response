@@ -98,4 +98,4 @@ Go : http://localhost:3001/
 ![visualizations](https://github.com/dakcicek/disaster_response/blob/master/app/screen-3.png)
 ![visualization-1](https://github.com/dakcicek/disaster_response/blob/master/app/screen-4.png)
 ![visualization-2](https://github.com/dakcicek/disaster_response/blob/master/app/screen-5.png)
-![visualization-3](https://github.com/dakcicek/disaster_response/blob/master/app/screen-6.png)
+
