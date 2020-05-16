@@ -30,6 +30,8 @@ from nltk.stem import SnowballStemmer
 from string import punctuation
 from sklearn.metrics import accuracy_score
 from sklearn.metrics import classification_report
+from sklearn.ensemble import AdaBoostClassifier
+
 
 
 def load_data(database_filepath):
@@ -79,13 +81,27 @@ def tokenize(text):
 
 def build_pipeline():
     print('Building pipeline..')
-
+    """
     improved_pipeline = Pipeline([
         ('vect', CountVectorizer(tokenizer=tokenize, stop_words='english')),
         ('tfidf', TfidfTransformer(norm='l2')),
         ('clf', MultiOutputClassifier(RandomForestClassifier(random_state=42, n_estimators=60,max_depth=4,n_jobs=4,verbose=3 )))
     ])
     return improved_pipeline
+    """
+    # model pipeline
+    grid_search_pipeline = Pipeline([
+        ('vect', CountVectorizer(tokenizer=tokenize, stop_words='english')),
+        ('tfidf', TfidfTransformer(norm='l2')),
+        ('clf', MultiOutputClassifier((AdaBoostClassifier())))
+    ])
+
+    parameters = {
+    'clf__estimator__n_estimators' : [5,10,50],
+    'clf__estimator__learning_rate' : [0.5,1],
+    }
+    grid_search_clf = GridSearchCV(grid_search_pipeline, parameters)
+    return grid_search_clf
 
         
 def evaluate_model(model, X_test, Y_test):
