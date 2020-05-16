@@ -5,7 +5,7 @@ Data Scientist Nanodegree
 
 Before the start, please use following command to clone repo  :
 
-`git clone https://github.com/dakcicek/disaster-response.git`
+`git clone https://github.com/dakcicek/disaster_response.git`
 
 1. There are two csv data file and following program will load, clean, transform and merge dataframes. After that result data frame will be written to database. You can use following command to trigger proces.
 
